@@ -1,0 +1,152 @@
+/* Palette lifted from src/theme/index.js so the site and the app read as one
+   product. Dark-first and deliberately single-look: the app is dark-only too. */
+:root {
+  --bg: #0C0F16;
+  --surface: #161B26;
+  --surface-alt: #1F2634;
+  --border: #2C3444;
+  --text: #EEF2F8;
+  --text-muted: #96A0B4;
+  --text-faint: #5C6779;
+  --accent: #FF5A1F;
+  --accent-soft: rgba(255, 90, 31, 0.14);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  padding: 0 20px 96px;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 680px; margin: 0 auto; }
+
+/* ------------------------------------------------------------------ header */
+
+header { padding: 56px 0 8px; }
+
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mark svg { flex: 0 0 auto; }
+
+.mark span {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin: 28px 0 10px;
+}
+
+.lede {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+
+.updated {
+  font-size: 14px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------- content */
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin: 40px 0 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+h2:first-of-type { border-top: 0; padding-top: 0; }
+
+h3 { font-size: 16px; font-weight: 700; margin: 24px 0 6px; }
+
+p, li { color: var(--text); }
+
+p { margin: 0 0 14px; }
+
+ul { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 8px; }
+
+strong { font-weight: 700; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+
+/* Contact address: the one thing a reviewer or a stuck user is hunting for. */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 22px 0;
+}
+
+.card.accent { border-color: var(--accent); background: var(--accent-soft); }
+
+.card p:last-child { margin-bottom: 0; }
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.email {
+  font-size: 19px;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.faq { margin-top: 8px; }
+
+.faq > div {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+.faq > div:first-child { border-top: 0; }
+
+.faq h3 { margin-top: 0; }
+.faq p:last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------------ footer */
+
+footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-faint);
+}
+
+footer a { color: var(--text-muted); }
+
+.nav { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
